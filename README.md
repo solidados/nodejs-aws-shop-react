@@ -1,6 +1,16 @@
 # React-shop-cloudfront
 
-This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
+This is a frontend starter project for nodejs-aws mentoring program. 
+
+## Task-2
+According to the task requirements, described in `2.3.1`:
+
+| AWS CloudFront                                          | AWS S3                                               |
+|---------------------------------------------------------|------------------------------------------------------|
+| [CloudFront URL](https://d1o7ngvb1u66vy.cloudfront.net) | [S3-website](s3://solidados-store-bucket/index.html) |
+
+## Technical review
+It uses the following technologies:
 
 - [Vite](https://vitejs.dev/) as a project bundler
 - [React](https://beta.reactjs.org/) as a frontend framework
@@ -24,6 +34,14 @@ Starts the project in dev mode with mocked API on local environment.
 ### `build`
 
 Builds the project for production in `dist` folder.
+
+### `cdk:deploy`
+
+This script, at first, it re-builds the project, and then it makes a CDK deploy to your bucket with any changes in your project.
+
+### `cdk:destroy`
+
+This script destroys AWS CloudFormation and a Bucket.
 
 ### `preview`
 
