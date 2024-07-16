@@ -48,7 +48,9 @@ export function useRemoveProductCache() {
 
 export function useUpsertAvailableProduct() {
   return useMutation((values: AvailableProduct) =>
-    axios.post<AvailableProduct>(`${API_PATHS.product}/products`, values
+    axios.post<AvailableProduct>(
+      `${API_PATHS.product}/products`,
+      values
       // {
       // headers: {
       //   Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
