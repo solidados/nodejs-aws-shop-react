@@ -1,14 +1,15 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+import Cart from "~/components/MainLayout/components/Cart";
+import Link from "@mui/material/Link";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
-import Cart from "~/components/MainLayout/components/Cart";
-import { Link as RouterLink } from "react-router-dom";
-import Link from "@mui/material/Link";
+import { CardMedia } from "@mui/material";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -26,14 +27,32 @@ export default function Header() {
   return (
     <AppBar position="relative">
       <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+        <Typography
+          variant="h6"
+          sx={{
+            display: "flex",
+            flexGrow: 1,
+            alignItems: "center",
+            gap: "10px",
+            color: "black",
+          }}
+        >
           <Link
             component={RouterLink}
-            sx={{ color: "inherit" }}
+            sx={{ color: "white" }}
             underline="none"
             to="/"
           >
-            My Store!
+            <CardMedia
+              sx={{
+                height: "40px",
+                width: "45px",
+                objectFit: "contain",
+                objectPosition: "center",
+              }}
+              image="/shop-logo.png"
+              title="Image title"
+            />
           </Link>
         </Typography>
 

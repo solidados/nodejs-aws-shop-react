@@ -23,10 +23,23 @@ export default function AddProductToCart({ product }: AddProductToCartProps) {
     );
   };
 
-  const removeProduct = () => {
+  // how it was:
+  // const removeProduct = () => {
+  //   if (cartItem) {
+  //     upsertCart(
+  //       { ...cartItem, count: cartItem.count - 1 },
+  //       { onSuccess: invalidateCart }
+  //     );
+  //   }
+  // };
+
+  const removeProduct = (): void => {
     if (cartItem) {
       upsertCart(
-        { ...cartItem, count: cartItem.count - 1 },
+        {
+          ...cartItem,
+          count: cartItem.count - 1 >= 0 ? cartItem.count - 1 : 0,
+        },
         { onSuccess: invalidateCart }
       );
     }
